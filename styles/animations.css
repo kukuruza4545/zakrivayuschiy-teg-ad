@@ -9,3 +9,138 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes scale-heart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparks-opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  transition: fill 0.3s 0.03s;
+
+  fill: var(--bg-color, #fff);
+}
+
+.main-body {
+  transition: fill 0.3s 0.05s;
+
+  fill: var(--bg-color, #fff);
+}
+
+.heart {
+  transform-origin: center;
+}
+
+/* Ховер */
+.like-icon:hover .core {
+  transition-delay: 0s;
+
+  fill: var(--contour-color);
+}
+
+.like-icon:hover .main-body {
+  transition-delay: 0.05s;
+
+  fill: var(--contour-color);
+}
+
+.like-icon .core {
+  transition-delay: 0.03s;
+}
+
+.like-icon .main-body {
+  transition-delay: 0s;
+}
+
+/* Зажимание */
+.like-icon:active .core {
+  transition-delay: 0s;
+
+  fill: var(--animation-fill-color);
+}
+
+.like-icon:active .main-body {
+  transition-delay: 0.05s;
+
+  fill: var(--animation-fill-color);
+}
+
+
+.like-icon.is-liked .core {
+  transition-delay: 0s;
+
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition-delay: 0.05s;
+
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s 0.06s;
+
+  fill: var(--animation-fill-color);
+}
+
+/* Масштабирование сердца */
+.like-icon.is-liked .heart {
+  animation: scale-heart 0.3s 0.1s ease-in;
+}
+
+/* Вспышка искр */
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s 0.3s ease-in;
+}
+
+/* Возврат контура при снятии лайка */
+.like-icon .contour {
+  transition: fill 0.1s linear;
+  fill: var(--heart-contour);
+}
+
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--text-color, #000);
+  transition: box-shadow 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--text-color, #000);
+  outline: none;
+  transition: border 0.3s ease;
+}
