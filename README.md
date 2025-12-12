@@ -1,1 +1,1 @@
-https://github.com/kukuruza4545/zakrivayuschiy-teg-ad/
+https://github.com/kukuruza4545/zakrivayuschiy-teg-ad/tree/main
